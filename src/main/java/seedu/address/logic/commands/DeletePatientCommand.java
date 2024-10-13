@@ -34,6 +34,21 @@ public class DeletePatientCommand extends Command {
         throw new CommandException(MESSAGE_NOT_IMPLEMENTED_YET);
     }
 
+    //    To be implemented once list is completed
+//    @Override
+//    public CommandResult execute(Model model) throws CommandException {
+//        requireNonNull(model);
+//        List<Patient> lastShownList = model.getFilteredPatientList();
+//
+//        if (targetIndex.getZeroBased() >= lastShownList.size()) {
+//            throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
+//        }
+//
+//        Person patientToDelete = lastShownList.get(targetIndex.getZeroBased());
+//        model.deletePerson(patientToDelete);
+//        return new CommandResult(String.format(MESSAGE_DELETE_PERSON_SUCCESS, Messages.format(patientToDelete)));
+//    }
+
     @Override
     public boolean equals(Object other) {
         if (other == this) {
