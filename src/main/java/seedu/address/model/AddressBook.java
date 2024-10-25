@@ -53,12 +53,22 @@ public class AddressBook implements ReadOnlyAddressBook {
     }
 
     /**
+     * Replaces the contents of the person list with {@code persons}.
+     * {@code persons} must not contain duplicate persons.
+     */
+    public void setAppointments(List<Appointment> appointments) {
+        this.appointments.setAppointments(appointments);
+    }
+
+
+    /**
      * Resets the existing data of this {@code AddressBook} with {@code newData}.
      */
     public void resetData(ReadOnlyAddressBook newData) {
         requireNonNull(newData);
 
         setPersons(newData.getPersonList());
+        setAppointments(newData.getAppointmentList());
     }
 
     //// person-level operations
@@ -113,6 +123,17 @@ public class AddressBook implements ReadOnlyAddressBook {
      */
     public void addAppointment(Appointment a) {
         appointments.add(a);
+    }
+
+    /**
+     * Replaces the given person {@code target} in the list with {@code editedPerson}.
+     * {@code target} must exist in the address book.
+     * The person identity of {@code editedPerson} must not be the same as another existing person in the address book.
+     */
+    public void setAppointment(Appointment target, Appointment editedAppointment) {
+        requireNonNull(editedAppointment);
+
+        appointments.setAppointment(target, editedAppointment);
     }
 
     /**
