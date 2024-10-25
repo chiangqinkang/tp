@@ -60,7 +60,6 @@ public class AddressBook implements ReadOnlyAddressBook {
         this.appointments.setAppointments(appointments);
     }
 
-
     /**
      * Resets the existing data of this {@code AddressBook} with {@code newData}.
      */
